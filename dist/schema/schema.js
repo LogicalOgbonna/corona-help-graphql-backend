@@ -17,7 +17,7 @@ const searchResultType = new graphql_1.GraphQLObjectType({
         id: { type: graphql_1.GraphQLString },
         name: { type: graphql_1.GraphQLString },
         vicinity: { type: graphql_1.GraphQLString },
-        rating: { type: graphql_1.GraphQLInt },
+        rating: { type: graphql_1.GraphQLString },
         opening_hours: {
             type: new graphql_1.GraphQLObjectType({
                 name: "OpeningHours",

@@ -30,7 +30,7 @@ exports.getUser = ({ id }) => __awaiter(void 0, void 0, void 0, function* () {
     return Object.assign(Object.assign({}, userRef.data()), { id: userRef.id });
 });
 exports.getUsers = () => __awaiter(void 0, void 0, void 0, function* () {
-    const userCollectRef = yield exports.db.collection("users").get();
-    return userCollectRef.docs.map(value => (Object.assign(Object.assign({}, value.data()), { id: value.id })));
+    return (yield exports.db.collection("users").get()).docs
+        .map(value => (Object.assign(Object.assign({}, value.data()), { id: value.id })));
 });
 exports.default = firebase_1.default;

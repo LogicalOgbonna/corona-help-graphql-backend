@@ -23,10 +23,7 @@ export const getUser = async ({ id }: User) => {
     return { ...userRef.data(), id: userRef.id }
 }
 
-
-export const getUsers = async () => {
-    const userCollectRef = await db.collection("users").get();
-    return userCollectRef.docs.map(value => ({ ...value.data(), id: value.id }))
-}
-
+export const getUsers = async () =>
+    (await db.collection("users").get()).docs
+        .map(value => ({ ...value.data(), id: value.id }));
 export default firebase;
