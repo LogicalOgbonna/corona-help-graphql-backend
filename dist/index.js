@@ -13,6 +13,6 @@ app.use("/graphql", express_graphql_1.default({
     schema: schema_1.default,
     graphiql: true
 }));
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log('Server is running on port 4000..');
 });
